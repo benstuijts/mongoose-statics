@@ -11,6 +11,10 @@ mongooseSchema.statics = require('../modules/mongoose-statics');
 
 ### $create
 
+    User.$create({ name: 'John', age: 32}, function(error, user) {
+        console.log('User with ' + user.name + ' was created in the database';
+    });
+
 ### $read
 
 ### $readOne
