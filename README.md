@@ -7,6 +7,15 @@ mongooseSchema.statics = require('../modules/mongoose-statics');
 
 ## Example
 
+    var mongoose = require('mongoose');
+    var userSchema = mongoose.Schema({
+        name: String,
+        age: Number,
+        admin: { type: boolean, default: false }
+    });
+    userSchema.statics = require('../modules/mongoose-statics');
+    module.exports = mongoose.model('User', userSchema);
+
 ## Methods
 
 ### $create
