@@ -7,6 +7,24 @@ The library makes the use of Promises.
 
 mongooseSchema.statics = require('../modules/mongoose-statics');
 
+## Promise pattern
+
+First you state what you want to do:
+
+    User._create({ name: 'John', age: 32 })
+
+Then, you simply pass on the values to the callback, if succeeded:
+
+        .then(function(user) {
+            console.log('User with ' + user.name + ' was created in the database');
+        })
+
+Or catch the errors on the way:
+
+        .catch(function(error) {
+            console.log('Error: ' + error);
+        })
+
 ## Example
 
     var mongoose = require('mongoose');
@@ -23,28 +41,21 @@ mongooseSchema.statics = require('../modules/mongoose-statics');
 ### _create
 
     User._create({ name: 'John', age: 32 })
-        .then(
+        .then(function(user) {
             console.log('User with ' + user.name + ' was created in the database');
-        );
+        });
 
-### $read
+### _read
 
-    User.$read({ age: 32 }, function(error, docs, numberFound) {
-        console.log('Read ' + numberFound + ' documents.');
-    });
-
-### $readOne
-
-    User.$readOne({ age: 32 }, function(error, doc) {
-        console.log('User read with name = ' + user.name + ' from database');
-    });
-
-### $updateById
-
-    User.$updateById(id, function(error, doc) {
-        console.log('User updated');
-    });
+    User._read({ age: 32 )
+        .then(function(docs) {
+            console.log('Read ' + docs.length + ' documents.');
+        });
 
 ### $delete
 
+    User._delete({ age: 32 )
+        .then(function(result) {
+            console.log(result + ' document(s) deleted.');
+        });
 
