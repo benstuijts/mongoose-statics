@@ -52,7 +52,7 @@ Or catch the errors on the way:
             console.log('Read ' + docs.length + ' documents.');
         });
 
-### $delete
+### _delete
 
     User._delete({ age: 32 )
         .then(function(result) {
