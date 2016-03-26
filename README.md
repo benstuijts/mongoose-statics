@@ -25,6 +25,26 @@ Or catch the errors on the way:
             console.log('Error: ' + error);
         })
 
+## Chaining promises
+
+You can easily chain the different methods together:
+
+User._read({})
+    .then(function(result) {
+        console.log('There are ' + result + ' documents in the database.';
+        return User._create({ name: 'Misha', age: 7});
+    })
+    .then(function(user) {
+        console.log('New user created: ' + user);
+        return User._read({});
+    })
+    .then(function(result) {
+        console.log('There are now ' + result + ' documents in the database.';
+    })
+    .catch(function(error) {
+        console.log('There was an error in this chain: ' + error);
+    });
+
 ## Example Schema declaration
 
     var mongoose = require('mongoose');
