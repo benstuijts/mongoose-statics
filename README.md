@@ -25,7 +25,7 @@ Or catch the errors on the way:
             console.log('Error: ' + error);
         })
 
-## Example
+## Example Schema declaration
 
     var mongoose = require('mongoose');
     var userSchema = mongoose.Schema({
