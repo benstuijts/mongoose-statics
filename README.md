@@ -1,7 +1,7 @@
 # mongoose-statics
 Simple add all CRUD methods and more to your Mongoose Models!
 
-The library makes the use of Promises.
+The library makes the use of Promises. Simple learn promises byu watching this video: https://youtu.be/g90irqWEqd8
 
 ## Usage in your mongoose model
 
