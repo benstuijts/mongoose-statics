@@ -1,5 +1,7 @@
 # mongoose-statics
-Simple add all CRUD methods and more to your Mongoose Models
+Simple add all CRUD methods and more to your Mongoose Models!
+
+The library makes the use of Promises.
 
 ## Usage in your mongoose model
 
@@ -18,11 +20,12 @@ mongooseSchema.statics = require('../modules/mongoose-statics');
 
 ## Methods
 
-### $create
+### _create
 
-    User.$create({ name: 'John', age: 32 }, function(error, user) {
-        console.log('User with ' + user.name + ' was created in the database');
-    });
+    User._create({ name: 'John', age: 32 })
+        .then(
+            console.log('User with ' + user.name + ' was created in the database');
+        );
 
 ### $read
 
