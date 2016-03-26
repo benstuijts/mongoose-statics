@@ -29,7 +29,7 @@ Or catch the errors on the way:
 
 You can easily chain the different methods together:
 
-User._read({})
+    User._read({})
     .then(function(result) {
         console.log('There are ' + result + ' documents in the database.';
         return User._create({ name: 'Misha', age: 7});
